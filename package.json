@@ -3,6 +3,15 @@
     "displayName": "ITheme",
     "description": "Beautiful theme inspired by apple design for vscode",
     "version": "0.1.1",
+    "publisher": "kevincaicedo",
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/kevincaicedo/vscode-itheme/issues"
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/kevincaicedo/vscode-itheme"
+    },
     "engines": {
         "vscode": "^1.57.0"
     },
