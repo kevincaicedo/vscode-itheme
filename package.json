@@ -107,7 +107,8 @@
     },
     "scripts": {
         "build-win10": "node-gyp rebuild",
-        "package": "vsce package"
+        "package": "vsce package",
+        "vscode:uninstall": "node ./extension/hooks/uninstall.js"
     },
     "dependencies": {
         "fs-extra": "^9.0.1",

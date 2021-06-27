@@ -2,6 +2,7 @@ var vscode = require('vscode');
 var fs = require('mz/fs');
 var fsExtra = require('fs-extra');
 var path = require('path');
+const lifecycle = require("./lifecycle");
 var lockPath = path.join(__dirname, '../firstload.lock');
 
 /**
@@ -174,26 +175,6 @@ function activate(context) {
 		}
 	}
 
-	async function uninstallJS() {
-		const JS = await fs.readFile(JSFile, 'utf-8');
-		const needClean = /\/\* !! VSCODE-VIBRANCY-START !! \*\/[\s\S]*?\/\* !! VSCODE-VIBRANCY-END !! \*\//.test(JS);
-		if (needClean) {
-			const newJS = JS
-				.replace(/\/\* !! VSCODE-VIBRANCY-START !! \*\/[\s\S]*?\/\* !! VSCODE-VIBRANCY-END !! \*\//, '')
-			await fs.writeFile(JSFile, newJS, 'utf-8');
-		}
-	}
-
-	async function uninstallHTML() {
-		const HTML = await fs.readFile(HTMLFile, 'utf-8');
-		const needClean = /<!-- !! VSCODE-VIBRANCY-START !! -->[\s\S]*?<!-- !! VSCODE-VIBRANCY-END !! -->/.test(HTML);
-		if (needClean) {
-			const newHTML = HTML
-				.replace(/<!-- !! VSCODE-VIBRANCY-START !! -->[\s\S]*?<!-- !! VSCODE-VIBRANCY-END !! -->/, '')
-			await fs.writeFile(HTMLFile, newHTML, 'utf-8');
-		}
-	}
-
 	function enabledRestart() {
 		vscode.window.showInformationMessage(localize('messages.enabled'), { title: localize('messages.restartIde') })
 			.then(function (msg) {
@@ -235,34 +216,10 @@ function activate(context) {
 			}
 			throw error;
 		}
-	}
-
-	async function Uninstall() {
-		try {
-			// uninstall old version
-			await fs.stat(HTMLFile);
-			await uninstallHTML();
-		} finally {
-
-		}
-
-		try {
-			await fs.stat(JSFile);
-			
-			await uninstallJS();
-		} catch (error) {
-			if (error && (error.code === 'EPERM' || error.code === 'EACCES')) {
-				vscode.window.showInformationMessage(localize('messages.admin') + error);
-			}
-			else {
-				vscode.window.showInformationMessage(localize('messages.smthingwrong') + error);
-			}
-			throw error;
-		}
-	}
+	}	
 
 	async function Update() {
-		await Uninstall();
+		await lifecycle.Uninstall(HTMLFile, JSFile)
 		await Install();
 	}
 
@@ -271,7 +228,7 @@ function activate(context) {
 		enabledRestart();
 	});
 	var uninstallVibrancy = vscode.commands.registerCommand('extension.uninstallVibrancy', async () => {
-		await Uninstall()
+		await lifecycle.Uninstall(HTMLFile, JSFile)
 		disabledRestart();
 	});
 	var updateVibrancy = vscode.commands.registerCommand('extension.updateVibrancy', async () => {
