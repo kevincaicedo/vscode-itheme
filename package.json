@@ -2,7 +2,7 @@
     "name": "vscode-itheme",
     "displayName": "ITheme",
     "description": "Beautiful theme inspired by apple design for vscode",
-    "version": "0.1.6",
+    "version": "0.1.7",
     "publisher": "kevincaicedo",
     "license": "MIT",
     "bugs": {
@@ -106,7 +106,8 @@
         }
     },
     "scripts": {
-        "build-win10": "node-gyp rebuild"
+        "build-win10": "node-gyp rebuild",
+        "package": "vsce package"
     },
     "dependencies": {
         "fs-extra": "^9.0.1",
