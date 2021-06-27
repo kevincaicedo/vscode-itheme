@@ -29,11 +29,6 @@
                 "label": "Dark ITheme",
                 "uiTheme": "vs-dark",
                 "path": "./themes/Dark Apple-color-theme.json"
-            },
-            {
-                "label": "Light ITheme",
-                "uiTheme": "vs-dark",
-                "path": "./themes/Light Apple-color-theme.json"
             }
         ],
         "commands": [
@@ -97,9 +92,7 @@
                     "default": "Dark ITheme (Sidebar)",
                     "enum": [
                         "Dark ITheme",
-                        "Dark ITheme (Sidebar)",
-                        "Light ITheme",
-                        "Light ITheme (Sidebar)"
+                        "Dark ITheme (Sidebar)"
                     ]
                 },
                 "vscode_vibrancy.imports": {

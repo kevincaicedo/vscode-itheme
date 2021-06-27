@@ -47,6 +47,9 @@ async function changeEditorStyle() {
 	await vscode.workspace.getConfiguration().update("editor.renderIndentGuides", false, vscode.ConfigurationTarget.Global);
 	await vscode.workspace.getConfiguration().update("workbench.editor.showIcons", false, vscode.ConfigurationTarget.Global);
 	await vscode.workspace.getConfiguration().update("editor.renderWhitespace", "none", vscode.ConfigurationTarget.Global);
+	await vscode.workspace.getConfiguration().update("editor.fontLigatures", true, vscode.ConfigurationTarget.Global);
+	await vscode.workspace.getConfiguration().update("editor.fontWeight", "500", vscode.ConfigurationTarget.Global);
+	await vscode.workspace.getConfiguration().update("editor.fontFamily", "'SF Mono', Menlo, Monaco, 'Courier New', monospace", vscode.ConfigurationTarget.Global);
 }
 
 async function promptRestart() {
