@@ -2,15 +2,15 @@
     "name": "vscode-itheme",
     "displayName": "ITheme",
     "description": "Beautiful theme inspired by apple design for vscode",
-    "version": "0.1.1",
+    "version": "0.1.6",
     "publisher": "kevincaicedo",
     "license": "MIT",
     "bugs": {
-      "url": "https://github.com/kevincaicedo/vscode-itheme/issues"
+        "url": "https://github.com/kevincaicedo/vscode-itheme/issues"
     },
     "repository": {
-      "type": "git",
-      "url": "https://github.com/kevincaicedo/vscode-itheme"
+        "type": "git",
+        "url": "https://github.com/kevincaicedo/vscode-itheme"
     },
     "engines": {
         "vscode": "^1.57.0"
@@ -94,12 +94,12 @@
                 "vscode_vibrancy.theme": {
                     "description": "%configuration.theme.description%",
                     "type": "string",
-                    "default": "default dark",
+                    "default": "Dark ITheme (Sidebar)",
                     "enum": [
-                        "Default Dark",
-                        "Dark (Only Subbar)",
-                        "Default Light",
-                        "Light (Only Subbar)"
+                        "Dark ITheme",
+                        "Dark ITheme (Sidebar)",
+                        "Light ITheme",
+                        "Light ITheme (Sidebar)"
                     ]
                 },
                 "vscode_vibrancy.imports": {

@@ -115,7 +115,6 @@
         "sideBar.background": "#2f2e30",
         "sideBar.border": "#000000",
         "sideBar.foreground": "#ffffff",
-        "sideBarSectionHeader.background": "#2f2e30",
         "sideBarSectionHeader.foreground": "#ffffff",
         "sideBarTitle.foreground": "#bcbcbc",
         "statusBar.background": "#2866bf",
@@ -831,14 +830,14 @@
             "scope": "entity.other.attribute-name.id",
             "settings": {
                 "foreground": "#61AFEF",
-                "fontStyle": "normal"
+                "fontStyle": "bold"
             }
         },
         {
             "scope": "entity.other.attribute-name.class.css",
             "settings": {
                 "foreground": "#D19A66",
-                "fontStyle": "normal"
+                "fontStyle": "bold"
             }
         },
         {

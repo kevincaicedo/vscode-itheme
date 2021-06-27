@@ -46,6 +46,7 @@ async function changeTerminalRendererType() {
 async function changeEditorStyle() {
 	await vscode.workspace.getConfiguration().update("editor.renderIndentGuides", false, vscode.ConfigurationTarget.Global);
 	await vscode.workspace.getConfiguration().update("workbench.editor.showIcons", false, vscode.ConfigurationTarget.Global);
+	await vscode.workspace.getConfiguration().update("editor.renderWhitespace", "none", vscode.ConfigurationTarget.Global);
 }
 
 async function promptRestart() {
