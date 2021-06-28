@@ -2,7 +2,7 @@
     "name": "vscode-itheme",
     "displayName": "ITheme",
     "description": "Beautiful theme inspired by apple design for vscode",
-    "version": "0.1.9",
+    "version": "0.2.0",
     "publisher": "kevincaicedo",
     "license": "MIT",
     "bugs": {
